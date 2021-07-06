@@ -12,25 +12,25 @@ const form = {
     {
       id: "email",
       type: "email",
-      label: "E-Mail Address",
+      label: "Adresse e-mail",
       required: true,
       value: "",
     },
     {
       id: "password",
       type: "password",
-      label: "Password",
+      label: "Mot de passe",
       required: true,
       value: "",
     },
   ],
   submitButton: {
     type: "submit",
-    label: "Login",
+    label: "Connexion",
   },
   button: {
     type: "button",
-    label: "Forgot password ?",
+    label: "Mot de pass oublié ?",
   },
 };
 
@@ -73,7 +73,7 @@ const LoginPage = () => {
       }
     } catch (err) {
       console.log(err);
-      setNotice({ type: "ERROR", message: "Something unexpected happened." });
+      setNotice({ type: "ERROR", message: "Quelque chose d'inattendu s'est produit." });
       dispatch({ type: "LOGOUT" });
     }
   };
@@ -85,7 +85,15 @@ const LoginPage = () => {
 
   return (
     <>
-      <h1 className="pageHeading">Login</h1>
+    <section className="section-content content-login padding-y" >
+    <div className="container mb-4">
+      <div className="row">
+        <div className="col-md-4"></div>
+        <div className="col-md-4">
+           <div className="card card-content-login mx-auto" >
+      <div className="card-body">
+      <h4 className="card-title mb-4">Se connecter</h4>
+      <hr/>
       <form id={form.id} onSubmit={handleSubmit}>
         {form.inputs.map((input, key) => {
           return (
@@ -106,17 +114,20 @@ const LoginPage = () => {
             {notice.message}
           </Notice>
         )}
-        <button class="btn btn-danger mr-3" type={form.submitButton.type}>{form.submitButton.label}</button>
-        <button class="btn btn-danger" type={form.button.type} onClick={handlePasswordReset}>
-          {form.button.label}
-        </button>
+        <button class=" mt-2 btn btn-primary btn-block mr-3" type={form.submitButton.type}>{form.submitButton.label}</button>
       </form>
-      <p>
-        Don't have an account yet?{" "}
-        <a href="/signup" rel="noreferrer noopener">
-          <strong>Sign up here.</strong>
-        </a>
-      </p>
+     
+      </div>
+    </div>
+     <p className="text-center mt-4">vous n'avez pas de compte ? <a href="#"> <strong>Créer un compte</strong></a></p>
+
+
+        </div>
+        <div className="col-md-4"></div>
+      </div>
+    </div>
+ 
+</section>
     </>
   );
 };

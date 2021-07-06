@@ -11,11 +11,30 @@ export default function products() {
         })
     },[])
     return (
-        <div>
-            <h3>Liste des produits</h3>
-            <ProductItem id={1} name={data.name} price={data.price} productImage={"http://image.jpg"}/>
-            
-          
+        <>
+
+        <div class="form-inline  mt-5 mb-4">
+            <strong class="mr-md-auto">32 produits trouvés </strong>
+            {/*<select class="mr-2 form-control">
+                <option>Latest items</option>
+                <option>Trending</option>
+                <option>Most Popular</option>
+                <option>Cheapest</option>
+            </select>
+            <div class="btn-group">
+                <a href="page-listing-grid.html" class="btn btn-light active" data-toggle="tooltip" title="" data-original-title="List view"> 
+                    <i class="fa fa-bars"></i></a>
+                <a href="page-listing-large.html" class="btn btn-light" data-toggle="tooltip" title="" data-original-title="Grid view"> 
+                    <i class="fa fa-th"></i></a>
+            </div>*/}
         </div>
+        <div className="row">
+            <div className="col-md-3">
+               <ProductItem id={1} name={data.name} price={data.price} productImage={"http://image.jpg"}/>
+            </div>
+        </div>
+          
+          
+        </>
     )
 }

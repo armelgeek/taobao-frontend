@@ -3,7 +3,8 @@ import cookies from "next-cookies";
 
 import Input from "../components/input";
 import Notice from "../components/notice";
-
+ 
+ 
 const form = {
   id: "signup",
   inputs: [

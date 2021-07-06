@@ -1,7 +1,11 @@
-import App from "next/app";
-import '../styles/globals.css'
-import 'tailwindcss/tailwind.css'
+import App from 'next/app';
+import '../styles/globals.css';
+import '../styles/fonts/fontawesome/css/all.min.css';
+import '../styles/css/bootstrap3661.css';
+import '../styles/css/ui3661.css';
+import '../styles/css/responsive3661.css';
 import cookies from "next-cookies";
+
 import UserProvider from "../context/UserContext";
 import Layout from "../components/layout";
 import {wrapper} from '../store';

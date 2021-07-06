@@ -12,28 +12,28 @@ const form = {
     {
       id: "name",
       type: "text",
-      label: "Name",
+      label: "Nom",
       required: true,
       value: "",
     },
     {
       id: "email",
       type: "email",
-      label: "E-Mail Address",
+      label: "Adresse e-mail",
       required: true,
       value: "",
     },
     {
       id: "password",
       type: "password",
-      label: "Password",
+      label: "Mot de passe",
       required: true,
       value: "",
     },
   ],
   submitButton: {
     type: "submit",
-    label: "Sign up",
+    label: "Créer maintenant!",
   },
 };
 
@@ -76,23 +76,30 @@ const SignupPage = () => {
         setNotice({
           type: "SUCCESS",
           message:
-            "Success! Check your inbox to confirm your email. You will now be redirected.",
+            "Succès! Vérifiez votre boîte de réception pour confirmer votre e-mail. Vous allez maintenant être redirigé.",
         });
         setTimeout(() => {
-          router.push("/pages");
+          router.push("/");
         }, 4000);
       }
     } catch (err) {
       console.log(err);
-      setNotice({ type: "ERROR", message: "Something unexpected happened." });
+      setNotice({ type: "ERROR", message: "Quelque chose d'inattendu s'est produit." });
       dispatch({ type: "LOGOUT" });
     }
   };
 
   return (
     <>
-      <h1 className="pageHeading">Signup</h1>
-      <form id={form.id} method="post" onSubmit={handleSubmit}>
+    <section class="section-content padding-y">
+     <div className="container mb-4">
+      <div className="row">
+        <div className="col-md-4"></div>
+        <div className="col-md-4">
+  <div class="card card-content-login mx-auto">
+      <article class="card-body">
+        <header class="mb-4"><h4 class="card-title">Créer un compte</h4></header>
+     <form id={form.id} method="post" onSubmit={handleSubmit}>
         {form.inputs.map((input, key) => {
           return (
             <Input
@@ -112,9 +119,20 @@ const SignupPage = () => {
             {notice.message}
           </Notice>
         )}
-        <button type={form.submitButton.type}>{form.submitButton.label}</button>
+        <button className="btn btn-primary btn-block mt-2" type={form.submitButton.type}>{form.submitButton.label}</button>
       </form>
-      <p>Sign up to create private pages that exist forever.</p>
+    </article>
+    </div> 
+    <p class="text-center mt-4">Vous avez déja un compte ? <a href="/login"><strong> Se connecter</strong></a></p>
+    <br/><br/>
+     
+
+        </div>
+        <div className="col-md-4"></div>
+      </div>
+    </div>
+ 
+</section>
     </>
   );
 };
