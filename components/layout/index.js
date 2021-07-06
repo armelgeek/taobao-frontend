@@ -72,7 +72,7 @@ const Layout = ({ children }) => {
           { isAuth && (
             <>
             <div className="widget-header mr-3">
-            <a href="#" className="widget-view">
+            <a href="/account" className="widget-view">
               <div className="icon-area">
                 <i className="fa fa-user"></i>
               </div>
@@ -90,7 +90,7 @@ const Layout = ({ children }) => {
           </>
           )}
           <div className="widget-header">
-            <a href="#" className="widget-view">
+            <a href="/cart" className="widget-view">
               <div className="icon-area">
                 <i className="fa fa-shopping-cart"></i>
                 <span class="notify">3</span>
@@ -135,6 +135,10 @@ const Layout = ({ children }) => {
       <li className="nav-item">
           <a className="nav-link" href="/login">Se connecter</a>
       </li>
+       { isAuth && (
+        <li className="nav-item">
+          <a className="nav-link" href="/logout">Déconnexion</a>
+      </li>) }
     </ul>)}
   </div> 
 </div> 
